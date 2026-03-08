@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ViralFormats</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1>Bibliothèque de formats viraux</h1>
+
+{% for format in formats %}
+
+<div class="card">
+<h2>{{ format.titre }}</h2>
+
+<p><b>Hook :</b> {{ format.hook }}</p>
+<p><b>Script :</b> {{ format.script }}</p>
+<p><b>Durée :</b> {{ format.duree }}</p>
+
+</div>
+
+{% endfor %}
+
+</body>
+</html>
