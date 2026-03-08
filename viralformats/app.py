@@ -1,8 +1,13 @@
+import random
 import sqlite3
 from flask import Flask, render_template
 
 app = Flask(__name__)
-
+# Liste initiale de formats
+formats = [
+    {"titre":"Dilemme", "hook":"90% regrettent", "script":"Pose un dilemme", "duree":"7-9s"},
+    {"titre":"Quiz", "hook":"Seuls les intelligents", "script":"Pose une question", "duree":"6-8s"}
+]
 def get_formats():
     conn = sqlite3.connect('formats.db')
     c = conn.cursor()
@@ -25,3 +30,4 @@ def generate():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
